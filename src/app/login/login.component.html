@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" id="loginId" placeholder="Email" formControlName="userName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" id="psd" placeholder="Password" formControlName="password">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Login</button>
+    <button mat-raised-button color="warn">Cancel</button>
+  </mat-card-actions>
+</mat-card>
