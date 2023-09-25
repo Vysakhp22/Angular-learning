@@ -1,0 +1,31 @@
+.example-card {
+    max-width: 35rem;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+}
+
+mat-card-header {
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+mat-form-field {
+    width: -webkit-fill-available;
+}
+
+mat-card-title-group {
+    justify-content: center;
+}
+
+mat-card-actions {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
