@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: lightseagreen;
+    max-width: 100%;
+}
+
+#right,
+#left {
+    display: flex;
+    gap: 10px;
+}
+
+a {
+    font-size: 20px;
+    color: black;
+}
