@@ -19,7 +19,7 @@ export class UserRegisterComponent implements OnInit {
     age: ['', Validators.required] 
   });
   constructor(private fb: FormBuilder,
-    private configData: Configdata) { }
+              private configData: Configdata) { }
 
 
   ngOnInit() {
