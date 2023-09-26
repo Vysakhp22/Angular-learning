@@ -16,7 +16,7 @@ export class UserRegisterComponent implements OnInit {
     mobile: [, [Validators.required, Validators.pattern(this.configData.mobileRegex)]],
     dob: ['', Validators.required],
     address: ['', Validators.required],
-    age: [, Validators.required] 
+    age: ['', Validators.required] 
   });
   constructor(private fb: FormBuilder,
     private configData: Configdata) { }
@@ -41,7 +41,7 @@ export class UserRegisterComponent implements OnInit {
     if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < dob.getDate())) {
       age--;
     }
-    this.userRegisterForm.controls.age.setValue(age);
+    this.userRegisterForm.controls.age.setValue(String(age));
   }
 
 }
