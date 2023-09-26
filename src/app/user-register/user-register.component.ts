@@ -16,7 +16,7 @@ export class UserRegisterComponent implements OnInit {
     mobile: [, [Validators.required, Validators.pattern(this.configData.mobileRegex)]],
     dob: ['', Validators.required],
     address: ['', Validators.required],
-    age: [0, Validators.required] //TODO age calcultion
+    age: [, Validators.required] 
   });
   constructor(private fb: FormBuilder,
     private configData: Configdata) { }
