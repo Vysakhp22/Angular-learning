@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+}
+
+mat-expansion-panel {
+    width: 50rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-basis: 48%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.fullwidth {
+    flex-basis: 100%;
+}
+
+.cell {
+    margin-right: 10px;
+}
+
+.cell:last-child {
+    margin-right: 0px;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
