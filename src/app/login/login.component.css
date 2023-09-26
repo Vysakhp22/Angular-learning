@@ -13,7 +13,7 @@ mat-card-header {
 form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 mat-form-field {
@@ -25,7 +25,5 @@ mat-card-title-group {
 }
 
 mat-card-actions {
-    justify-content: center;
     gap: 10px;
-    margin-bottom: 10px;
 }
