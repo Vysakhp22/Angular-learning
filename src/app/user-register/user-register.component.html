@@ -16,12 +16,14 @@
               <mat-form-field>
                 <mat-label>First name</mat-label>
                 <input type="text" placeholder="First name" formControlName="firstName" matInput>
+                <mat-error *ngIf="userRegisterFormConrtols['firstName']?.['touched'] && userRegisterFormConrtols['firstName']['errors']?.['required']">Please fill the field</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
               <mat-form-field>
                 <mat-label>Last name</mat-label>
                 <input matInput type="text" placeholder="Last name" formControlName="lastName">
+                <mat-error *ngIf="userRegisterFormConrtols['lastName']?.['touched'] && userRegisterFormConrtols['lastName']['errors']?.['required']">Please fill the field</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -29,6 +31,8 @@
             <mat-form-field>
               <mat-label>Email</mat-label>
               <input type="email" placeholder="Email" matInput formControlName="email">
+              <mat-error *ngIf="userRegisterFormConrtols['email']?.['touched'] && userRegisterFormConrtols['email']['errors']?.['required']">Please fill the field</mat-error>
+              <mat-error *ngIf="userRegisterFormConrtols['email']['errors']?.['pattern']">Invalid Email</mat-error>
             </mat-form-field>
           </div>
           <div class="row">
@@ -36,6 +40,7 @@
               <mat-form-field>
                 <mat-label>DOB</mat-label>
                 <input matInput type="date" placeholder="date-of-birth" formControlName="dob" (blur)="ageCalculator()">
+                <mat-error *ngIf="userRegisterFormConrtols['dob']?.['touched'] && userRegisterFormConrtols['dob']['errors']?.['required']">Please fill the field</mat-error>
               </mat-form-field>
             </div>
             <div class="cell">
@@ -48,6 +53,8 @@
               <mat-form-field>
                 <mat-label>Mobile</mat-label>
                 <input matInput type="number" placeholder="Mobile number" formControlName="mobile">
+                <mat-error *ngIf="userRegisterFormConrtols['mobile']?.['touched'] && userRegisterFormConrtols['mobile']['errors']?.['required']">Please fill the field</mat-error>
+                <mat-error *ngIf="userRegisterFormConrtols['mobile']['errors']?.['pattern']">Invalid mobileno.</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -55,6 +62,7 @@
             <mat-form-field>
               <mat-label>Address</mat-label>
               <textarea matInput placeholder="Enter your address" formControlName="address"></textarea>
+              <mat-error *ngIf="userRegisterFormConrtols['address']?.['touched'] && userRegisterFormConrtols['address']['errors']?.['required']">Please fill the field</mat-error>
             </mat-form-field>
           </div>
           <div class="fullwidth">
