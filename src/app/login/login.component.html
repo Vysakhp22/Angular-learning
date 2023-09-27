@@ -9,10 +9,16 @@
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput type="text" id="loginId" placeholder="Email" formControlName="userName">
+        <mat-error
+          *ngIf="loginFormControls['userName']?.['touched'] || loginFormControls['userName']['errors']?.['required']">Please
+          fill the field</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Password</mat-label>
         <input matInput type="password" id="psd" placeholder="Password" formControlName="password">
+        <mat-error
+          *ngIf="loginFormControls['password']?.['touched'] || loginFormControls['password']['errors']?.['required']">Please
+          fill the field</mat-error>
       </mat-form-field>
       <mat-card-actions>
         <button mat-raised-button color="primary" type="submit">Login</button>
