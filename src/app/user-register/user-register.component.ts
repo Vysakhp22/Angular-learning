@@ -16,7 +16,9 @@ export class UserRegisterComponent implements OnInit {
     mobile: [, [Validators.required, Validators.pattern(this.configData.mobileRegex)]],
     dob: ['', Validators.required],
     address: ['', Validators.required],
-    age: ['', Validators.required]
+    age: ['', Validators.required],
+    password: ['', Validators.required],
+    cpassword: ['', Validators.required]
   });
   constructor(private fb: FormBuilder,
     private configData: Configdata) { }

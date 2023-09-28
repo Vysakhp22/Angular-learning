@@ -78,6 +78,26 @@
                 fill the field</mat-error>
             </mat-form-field>
           </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" placeholder="Password" formControlName="password" matInput>
+                <mat-error
+                  *ngIf="userRegisterFormConrtols['password']?.['touched'] && userRegisterFormConrtols['password']['errors']?.['required']">Please
+                  fill the field</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field>
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" placeholder="Confirm Password" formControlName="cpassword">
+                <mat-error
+                  *ngIf="userRegisterFormConrtols['cpassword']?.['touched'] && userRegisterFormConrtols['cpassword']['errors']?.['required']">Please
+                  fill the field</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
           <div class="fullwidth">
             <mat-card-actions>
               <button mat-raised-button color="primary" type="submit">Register</button>
