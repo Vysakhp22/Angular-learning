@@ -28,20 +28,19 @@ export class UserRegisterComponent implements OnInit {
     return this.userRegisterForm?.controls;
   }
 
-
-
   ngOnInit() {
 
   }
 
   private confirmPasword(): ValidatorFn {
-    console.log(this.userRegisterFormConrtols?.password);
     return (control: AbstractControl): ValidationErrors | null => {
       return control.value === this.userRegisterFormConrtols?.password.value ? null : { confirm: true };
     }
   }
 
   public registerFormSubmission() {
+    this.userRegisterForm.markAllAsTouched()
+    if (!this.userRegisterForm.valid) return;
     console.log(this.userRegisterForm?.value);
     localStorage.setItem('user-data', JSON.stringify(this.userRegisterForm?.value));
   }
