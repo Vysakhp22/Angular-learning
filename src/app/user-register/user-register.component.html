@@ -95,6 +95,8 @@
                 <mat-error
                   *ngIf="userRegisterFormConrtols['cpassword']?.['touched'] && userRegisterFormConrtols['cpassword']['errors']?.['required']">Please
                   fill the field</mat-error>
+                <mat-error *ngIf="userRegisterFormConrtols['cpassword']['errors']?.['confirm']">Password is not
+                  matching</mat-error>
               </mat-form-field>
             </div>
           </div>
