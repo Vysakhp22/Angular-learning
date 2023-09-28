@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Configdata } from '../services/config-data';
 
 @Component({
@@ -18,10 +18,10 @@ export class UserRegisterComponent implements OnInit {
     address: ['', Validators.required],
     age: ['', Validators.required],
     password: ['', Validators.required],
-    cpassword: ['', Validators.required]
+    cpassword: ['', [Validators.required, this.confirmPasword()]]
   });
-  constructor(private fb: FormBuilder,
-    private configData: Configdata) { }
+
+  constructor(private fb: FormBuilder, private configData: Configdata) { }
 
   //get method return all the form controls
   public get userRegisterFormConrtols() {
@@ -32,6 +32,13 @@ export class UserRegisterComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  private confirmPasword(): ValidatorFn {
+    console.log(this.userRegisterFormConrtols?.password);
+    return (control: AbstractControl): ValidationErrors | null => {
+      return control.value === this.userRegisterFormConrtols?.password.value ? null : { confirm: true };
+    }
   }
 
   public registerFormSubmission() {
