@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
-import { AuthServiceService } from '../services/auth-service.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,23 +17,26 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  constructor(private snackBar: MatSnackBar, private authService: AuthServiceService) { }
-
+  constructor(private snackBar: MatSnackBar, private authService: AuthService) { }
+  public user: any;
+  public adminData: any;
   public get loginFormControls() {
     return this.loginForm?.controls;
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.adminData = await this.authService.adminData().toPromise();
+    this.user = JSON.parse(localStorage.getItem('user-data')!);
   }
 
-  public async loginFormSubmit() {
+  public loginFormSubmit() {
     // let d: any
     // this.authService.adminDatacheck().then(v => d = v);
-    const data: any = await this.authService.adminData().toPromise();
-    const user: any = JSON.parse(localStorage.getItem('user-data')!);
 
-    if (data?.userName === this.loginForm?.value?.userName && data?.password === this.loginForm?.value?.password) {
+    if (this.adminData?.userName === this.loginForm?.value?.userName && this.adminData?.password === this.loginForm?.value?.password) {
       this.openSnackBar('success');
+    } else if (this.user?.email === this.loginForm?.value?.userName && this.user?.password === this.loginForm?.value?.password) {
+      this.openSnackBar('user');
     }
   }
   private openSnackBar(message: string, action?: string) {
