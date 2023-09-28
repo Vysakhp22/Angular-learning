@@ -16,11 +16,8 @@ export class AuthServiceService {
   //2nd method to receive data
   public adminDatacheck(): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.http.get('../../assets/admin-data.json').subscribe((data) => {
-        resolve(data);
-      }, (err) =>
-        reject({ type: 'error', error: err })
-      );
-  });
-}
+      this.http.get('../../assets/admin-data.json').subscribe((data) => resolve(data),
+        (err) => reject({ type: 'error', error: err }));
+    });
+  }
 }
