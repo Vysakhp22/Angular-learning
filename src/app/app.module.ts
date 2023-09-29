@@ -17,13 +17,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserRegisterComponent,
-    HomeComponent
+    HomeComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

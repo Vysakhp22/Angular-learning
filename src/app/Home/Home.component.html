@@ -4,9 +4,9 @@
       My App</h3>
   </div>
   <div id="right">
-    <button mat-stroked-button>Register</button>
-    <button mat-stroked-button>Sign-In</button>
+    <button mat-stroked-button [routerLink]="'register'">Register</button>
+    <button mat-stroked-button [routerLink]="'login'">Sign-In</button>
     <button mat-stroked-button><i class="bi bi-box-arrow-right"></i></button>
   </div>
-
 </div>
+<router-outlet></router-outlet>
