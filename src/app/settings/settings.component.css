@@ -1,0 +1,10 @@
+.container {
+    padding: 1rem;
+    display: grid;
+    height: 2rem;
+    background-color: darkviolet;
+}
+
+.col {
+    justify-self: end;
+}
