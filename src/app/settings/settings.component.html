@@ -1,9 +1,12 @@
 <div class="container">
-    <div class="col">
-        <div class="example-button-container">
-            <button mat-mini-fab color="accent">
-              <mat-icon>filter_list</mat-icon>
-            </button>
-          </div>
+  <div class="col">
+    <div>
+      <button mat-mini-fab color="accent">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent" (click)="logOut()">
+        <mat-icon class="bi bi-box-arrow-right"></mat-icon>
+      </button>
     </div>
+  </div>
 </div>

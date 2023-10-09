@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.authService.loggedOut();
     this.adminData = await this.authService.adminData().toPromise();
     this.user = JSON.parse(localStorage.getItem('user-data')!);
   }

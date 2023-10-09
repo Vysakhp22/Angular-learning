@@ -8,3 +8,7 @@
 .col {
     justify-self: end;
 }
+
+button {
+    margin-right: 10px;
+}
