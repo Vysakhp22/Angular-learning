@@ -41,7 +41,6 @@ export class UserRegisterComponent implements OnInit {
   public registerFormSubmission() {
     this.userRegisterForm.markAllAsTouched()
     if (!this.userRegisterForm.valid) return;
-    console.log(this.userRegisterForm?.value);
     localStorage.setItem('user-data', JSON.stringify(this.userRegisterForm?.value));
   }
 
